@@ -293,6 +293,8 @@ $nb-slides: 10;
 }
 
 .movie{
+    text-decoration: none;
+
     background:linear-gradient(30deg, rgba(0,0,0,0.8) 20%, $violet 100%);
     width: 15.3rem;
     

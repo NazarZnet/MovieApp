@@ -16,3 +16,18 @@ def index():
         'upcoming': upcoming[5:15]
     }
     return render_template('index.html', **context)
+
+@main.route('/movie/<int:movie_id>')
+def movie(movie_id:int):
+    movie = current_app.movieapi.get_movie_details(movie_id)
+    video_key= current_app.movieapi.get_video_id(movie_id)
+    similar = current_app.movieapi.get_similar_movies(movie_id)
+    images= current_app.movieapi.get_movie_images(movie_id)
+
+    context = {
+        'movie': movie,
+        'video_key': video_key,
+        'similar': similar[0:5],
+        'images': images
+    }
+    return render_template('main/movie.html', **context)

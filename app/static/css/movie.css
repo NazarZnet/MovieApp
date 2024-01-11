@@ -1,0 +1,376 @@
+@import url("https://fonts.googleapis.com/css2?family=Griffy&display=swap");
+.movie-background {
+  position: relative;
+  padding: 1rem;
+}
+.movie-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  /* Change the last value to adjust the opacity */
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  gap: 100px;
+  margin-bottom: 5rem;
+  width: 80%;
+  margin: 0 auto;
+}
+.header .movie {
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+}
+.header .movie-image {
+  max-height: 60vh;
+  position: relative;
+  z-index: 2;
+}
+.header .movie-title {
+  font-size: 3rem;
+  color: #FFC907;
+  font-family: "Griffy", cursive;
+  margin-top: 3rem;
+}
+.header .movie-date {
+  text-align: right;
+  font-size: 1.5rem;
+  color: #A1B1CB;
+}
+.header .movie-like {
+  color: rgb(215, 111, 13);
+}
+.header .movie-rate {
+  display: flex;
+  align-items: center;
+  color: #FFC907;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.header .movie-rate img {
+  height: 1.5rem;
+}
+.header .movie-rate p {
+  margin-left: 0.5rem;
+}
+.header .movie-description {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+/* Try hovering and changing the height/width */
+body,
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.movie-galery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  background: black;
+  margin: 0;
+}
+
+#mz-gallery-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#mz-gallery {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: calc(100% - 70px);
+  height: calc(100% - 50px);
+  max-height: 670px;
+  max-width: 1900px;
+  margin: 35px 0px;
+  background-color: black;
+  background-image: radial-gradient(rgba(124, 252, 0, 0.4) 1px, black 1px);
+  background-size: 40px 40px;
+  outline-offset: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 0 0 55px;
+  scroll-behavior: smooth;
+  /* firefox scrollbar */
+  scrollbar-color: #6650A5 #222;
+  scrollbar-width: auto;
+  animation: background 300s linear infinite;
+}
+
+@keyframes background {
+  0% {
+    background-position: -300% 100%;
+  }
+  100% {
+    background-position: 100% -300%;
+  }
+}
+#mz-gallery::-webkit-scrollbar {
+  height: 25px;
+}
+
+#mz-gallery::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#mz-gallery::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+#mz-gallery::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#mz-gallery::-webkit-scrollbar-thumb:active {
+  background: #444;
+}
+
+#mz-gallery::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  height: 25px;
+  width: 40px;
+  background-color: #6650A5;
+  color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-box-arrow-left' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z'/%3E%3Cpath fill-rule='evenodd' d='M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z'/%3E%3C/svg%3E");
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#mz-gallery::-webkit-scrollbar-button:single-button:horizontal:increment {
+  height: 25px;
+  width: 40px;
+  background-color: #6650A5;
+  color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-box-arrow-right' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z'/%3E%3Cpath fill-rule='evenodd' d='M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z'/%3E%3C/svg%3E");
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#mz-gallery figure {
+  position: relative;
+  margin: unset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  width: auto;
+  min-height: 100px;
+  margin-right: 60px;
+  scroll-snap-align: start;
+  transition: all 0.3s ease-in-out;
+}
+
+#mz-gallery figure:nth-child(1) {
+  margin-left: 60px;
+}
+
+#mz-gallery figure img {
+  height: 100%;
+  width: auto;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  border-radius: 5px;
+  opacity: 0.9;
+  filter: brightness(1);
+  outline: 1px solid transparent;
+  outline-offset: -40px;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 1145px) {
+  #mz-gallery figure {
+    scroll-snap-align: center;
+  }
+  #mz-gallery {
+    scroll-padding: 0px 0px 0px 0px !important;
+  }
+}
+@media (max-width: 610px) {
+  #mz-gallery {
+    max-height: 320px;
+  }
+  #mz-gallery figure {
+    margin-right: 20px;
+  }
+  #mz-gallery figure:nth-child(1) {
+    margin-left: 20px;
+  }
+}
+@media (max-height: 425px) {
+  #mz-gallery figure figcaption {
+    font-size: 14pt;
+    line-height: 20pt;
+  }
+}
+@media (max-height: 340px) {
+  #mz-gallery {
+    background-size: 30px 30px;
+    scroll-padding: 0 0 0 28px;
+  }
+  #mz-gallery figure {
+    margin-right: 30px;
+  }
+  #mz-gallery figure:nth-child(1) {
+    margin-left: 30px;
+  }
+  #mz-gallery figure figcaption {
+    font-size: 12pt;
+    line-height: 18pt;
+    font-weight: 400;
+    background-size: 30px 30px;
+  }
+}
+@media (max-height: 280px) {
+  #mz-gallery::-webkit-scrollbar {
+    height: 20px;
+  }
+  #mz-gallery::-webkit-scrollbar-button:single-button:horizontal:decrement,
+  #mz-gallery::-webkit-scrollbar-button:single-button:horizontal:increment {
+    width: 80px;
+    height: 20px;
+    background-size: 15px;
+  }
+}
+@media (max-height: 230px) {
+  #mz-gallery figure figcaption {
+    font-size: 10pt;
+    line-height: 12pt;
+  }
+}
+@media (max-height: 165px) {
+  #mz-gallery {
+    scroll-padding: 0 0 0 18px;
+    margin: 0px;
+  }
+  #mz-gallery figure {
+    margin-right: 20px;
+  }
+  #mz-gallery figure:nth-child(1) {
+    margin-left: 20px;
+  }
+}
+/* touch screen devices */
+@media (pointer: coarse) {
+  #mz-gallery * {
+    pointer-events: none;
+  }
+  #mz-gallery::-webkit-scrollbar {
+    height: 35px;
+  }
+  #mz-gallery {
+    scroll-snap-type: unset;
+    scroll-padding: unset;
+    scroll-behavior: unset;
+  }
+}
+.movie-video {
+  margin-top: 2rem;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+.movie-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.movielist {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+.movielist-header {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.movielist-header h2 {
+  color: #FFC907;
+  font-family: "Griffy", system-ui;
+}
+.movielist .movie {
+  text-decoration: none;
+  background: linear-gradient(30deg, rgba(0, 0, 0, 0.8) 20%, #6650A5 100%);
+  width: 15.3rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(146, 135, 220, 0.2);
+}
+.movielist .movie-main-image {
+  width: 100%;
+}
+.movielist .movie-title {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+}
+.movielist .movie-title:hover::after {
+  content: attr(title);
+  position: absolute;
+  background: #6650A5;
+  color: #fff;
+  padding: 5px;
+  top: 100%;
+  left: 0;
+  white-space: normal;
+  pointer-events: none;
+}
+.movielist .movie-date {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  color: #A1B1CB;
+}
+.movielist .movie-rate {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  color: #FFC907;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.movielist .movie-rate p {
+  margin-left: 0.5rem;
+}/*# sourceMappingURL=movie.css.map */
