@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Griffy&display=swap");
+.movielist {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.movielist-header {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.movielist-header h2 {
+  color: #FFC907;
+  font-family: "Griffy", system-ui;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #6650A5;
+  border: 0.1rem solid #6650A5;
+  border-radius: 0.5rem;
+  transition: 0.1s all ease-in-out;
+}
+.link:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.next-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  transition: 0.1s all ease-in-out;
+}
+.next-link:hover {
+  transform: translateY(-5px) scale(1.2);
+}
+
+.movie {
+  background: linear-gradient(30deg, rgba(0, 0, 0, 0.8) 20%, #6650A5 100%);
+  width: 15.45rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(146, 135, 220, 0.2);
+}
+.movie-main-image {
+  width: 100%;
+}
+.movie-title {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+}
+.movie-title:hover::after {
+  content: attr(title);
+  position: absolute;
+  background: #6650A5;
+  color: #fff;
+  padding: 5px;
+  top: 100%;
+  left: 0;
+  white-space: normal;
+  pointer-events: none;
+}
+.movie-date {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  color: #A1B1CB;
+}
+.movie-rate {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  color: #FFC907;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.movie-rate p {
+  margin-left: 0.5rem;
+}/*# sourceMappingURL=index.css.map */

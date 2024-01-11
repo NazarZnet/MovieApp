@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Griffy&display=swap");
+body {
+  background-color: black;
+  color: #fff;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 4.5rem;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0), #6650A5);
+}
+.nav-logo {
+  padding: 0.5rem;
+  color: #FFC907;
+  font-family: "Griffy", system-ui;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-links li {
+  list-style: none;
+}
+.nav-links li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #A1B1CB;
+  font-size: 1rem;
+  padding: 0.5rem;
+  transition: 0.3s all ease-in-out;
+  border-radius: 0 0 0 10%;
+}
+.nav-links li a:hover {
+  color: #fff;
+  border-bottom: 0.2rem solid #fff;
+}
+.nav-links li a.active {
+  color: #fff;
+  border-bottom: 0.2rem solid #fff;
+}
+.nav-search {
+  position: relative;
+}
+.nav-search input {
+  border: 0.1rem solid #A1B1CB;
+  padding: 0.3rem;
+  height: 1.2rem;
+  min-width: 10rem;
+  background-color: #3B567D;
+  border-radius: 2rem;
+}
+.nav-search svg {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.nav-profile svg {
+  color: #fff;
+}
+.nav-profile button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #fff;
+  border: 0.15rem solid #fff;
+  border-radius: 0.5rem;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}/*# sourceMappingURL=base.css.map */
