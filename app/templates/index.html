@@ -107,7 +107,7 @@
     </div>
     <div class="movielist">
         {% for movie in popular %}
-        <div class="movie">
+        <a class="movie" href="{{ url_for('main.movie', movie_id=movie.get('id') ) }}">
             <img class="movie-main-image" src="https://image.tmdb.org/t/p/original{{movie.get('poster_path')}}" alt="">
             <h3 class="movie-title" title="{{movie.get('title')}}">{{movie.get('title')}}</h3>
             <p class="movie-date">{{movie.get('release_date')}}</p>
@@ -124,7 +124,7 @@
                     </path>
                 </svg>
             </div>
-        </div>
+        </a>
         {% endfor %}
         <a href="" class="next-link">
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="3em" width="3em"
@@ -145,7 +145,7 @@
     </div>
     <div class="movielist">
         {% for movie in top_rated %}
-        <div class="movie">
+        <a class="movie" href="{{ url_for('main.movie', movie_id=movie.get('id') ) }}">
             <img class="movie-main-image" src="https://image.tmdb.org/t/p/original{{movie.get('poster_path')}}" alt="">
             <h3 class="movie-title" title="{{movie.get('title')}}">{{movie.get('title')}}</h3>
             <p class="movie-date">{{movie.get('release_date')}}</p>
@@ -162,7 +162,7 @@
                     </path>
                 </svg>
             </div>
-        </div>
+        </a>
         {% endfor %}
         <a href="" class="next-link">
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="3em" width="3em"
