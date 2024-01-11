@@ -1,0 +1,100 @@
+$yellow: #FFC907;
+$violet:#6650A5;
+$secondary:#A1B1CB;
+$primary:#fff;
+
+@import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
+
+body{
+    background-color: black;
+    color: $primary;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 4.5rem;
+
+
+    background: linear-gradient(45deg, #0000, $violet);
+    &-logo{
+        padding: 0.5rem;
+        color: $yellow;
+        font-family: 'Griffy', system-ui;
+    }
+    &-links{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        & li{
+            list-style: none;
+            & a{
+                text-decoration: none;
+                text-transform: uppercase;
+                color: $secondary;
+                font-size: 1rem;
+                padding: .5rem;
+                transition: .3s all ease-in-out;
+
+                border-radius: 0 0 0 10%;
+
+                &:hover{    
+                    color:$primary ;
+                    border-bottom: .2rem solid $primary;
+                }
+                &.active{
+                    color: $primary;
+
+                    border-bottom: .2rem solid $primary;
+                }
+            }
+        }
+    }
+    &-search{
+        position: relative;
+        & input{
+            border: .1rem solid $secondary;
+            padding: .3rem;
+            height: 1.2rem;
+            min-width: 10rem;
+
+            background-color: #3B567D;
+            border-radius: 2rem;
+        }
+        & svg{
+            position: absolute;
+            right: 0.5rem; // adjust as needed
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    &-profile{
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        & svg{
+            color: $primary;
+        }
+
+        & button{
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+
+            height: 3rem;
+            padding: .5rem 1rem;
+            text-transform: uppercase;
+
+
+            background-color: transparent;
+            color: $primary;
+            border: .15rem solid $primary;
+            border-radius: .5rem;
+        }
+    }
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
