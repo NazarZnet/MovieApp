@@ -31,3 +31,27 @@ def movie(movie_id:int):
         'images': images
     }
     return render_template('main/movie.html', **context)
+
+@main.route('/movies/<string:list_type>')
+def movie_list(list_type:str):
+    if list_type == 'now_playing':
+        movies = current_app.movieapi.get_now_playing()
+        title = 'Now Playing'
+    elif list_type == 'popular':
+        movies = current_app.movieapi.get_popular()
+        title = 'Popular'
+    elif list_type == 'top_rated':
+        movies = current_app.movieapi.get_top_rated()
+        title = 'Top Rated'
+    elif list_type == 'upcoming':
+        movies = current_app.movieapi.get_upcoming()
+        title = 'Upcoming'
+    else:
+        movies = []
+        title = 'Error'
+
+    context = {
+        'movies': movies,
+        'title': title
+    }
+    return render_template('main/movie_list.html', **context)
