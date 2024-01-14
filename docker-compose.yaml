@@ -1,17 +1,13 @@
 version: '3.8'
 services:
   db:
-    image: postgres:15.2-alpine
-    restart: always
+    image: postgres:latest
     env_file:
       - .env
     ports:
-      - '5400:5400'
-    expose:
-      - '5400'
+      - '${DB_PORT}:${DB_PORT}'
     volumes:
-      - ./database/postgres/data:/var/lib/postgresql/data
-    command: -p 5400
+      - postgres_data:/var/lib/postgresql/data
 volumes:
-  db:
+  postgres_data:
     driver: local
