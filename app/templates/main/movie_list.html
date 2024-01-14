@@ -34,6 +34,12 @@
         {% endfor %}
     </div>
 
+    <div class="pages">
+        {% for i in range(1,11) %}
+            <a href="?page={{i}}" {% if page==i %} class="active" {% endif %}>{{i}}</a>
+        {% endfor %}
+    </div>
+
 
 </div>
 {% endblock %}

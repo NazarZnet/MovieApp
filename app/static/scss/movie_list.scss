@@ -12,6 +12,7 @@ $primary: #fff;
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
+    justify-content: center;
     
 
     margin-bottom: 4rem;
@@ -85,6 +86,39 @@ $primary: #fff;
             & p {
                 margin-left: 0.5rem;
             }
+        }
+    }
+}
+
+.pages{
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem;
+
+    display: flex;
+    
+    justify-content: center;
+    gap: 0.5rem;
+
+    overflow: hidden;
+
+    & a {
+        text-decoration: none;
+        color: $yellow;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        background: $violet;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background: $yellow;
+            color: $violet;
+        }
+        &.active {
+            background: $yellow;
+            color: $violet;
         }
     }
 }

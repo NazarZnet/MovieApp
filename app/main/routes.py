@@ -34,17 +34,20 @@ def movie(movie_id:int):
 
 @main.route('/movies/<string:list_type>')
 def movie_list(list_type:str):
+    from flask import request
+    page=request.args.get('page', 1, type=int)
+
     if list_type == 'now_playing':
-        movies = current_app.movieapi.get_now_playing()
+        movies = current_app.movieapi.get_now_playing(page)
         title = 'Now Playing'
     elif list_type == 'popular':
-        movies = current_app.movieapi.get_popular()
+        movies = current_app.movieapi.get_popular(page)
         title = 'Popular'
     elif list_type == 'top_rated':
-        movies = current_app.movieapi.get_top_rated()
+        movies = current_app.movieapi.get_top_rated(page)
         title = 'Top Rated'
     elif list_type == 'upcoming':
-        movies = current_app.movieapi.get_upcoming()
+        movies = current_app.movieapi.get_upcoming(page)
         title = 'Upcoming'
     else:
         movies = []
@@ -52,6 +55,7 @@ def movie_list(list_type:str):
 
     context = {
         'movies': movies,
-        'title': title
+        'title': title,
+        'page': page,
     }
     return render_template('main/movie_list.html', **context)
