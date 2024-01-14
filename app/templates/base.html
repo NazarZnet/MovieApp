@@ -19,9 +19,9 @@
             <h1>MovieApp</h1>
         </div>
         <ul class="nav-links">
-            <li><a href="/" class="active">Home</a></li>
-            <li><a href="/">Popular</a></li>
-            <li><a href="/">Top rated</a></li>
+            <li><a href="{{ url_for('main.index') }}" class="active">Home</a></li>
+            <li><a href="{{ url_for('main.movie_list', list_type='popular') }}">Popular</a></li>
+            <li><a href="{{ url_for('main.movie_list', list_type='top_rated') }}">Top rated</a></li>
         </ul>
         <div class="nav-search">
             <input type="text" placeholder="SEARCH">
@@ -69,9 +69,9 @@
         <div>
             <h3>Navigation</h3>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/">Popular</a></li>
-                <li><a href="/">Top rated</a></li>
+                <li><a href="{{ url_for('main.index')}}">Home</a></li>
+                <li><a href="{{ url_for('main.movie_list', list_type='popular') }}">Popular</a></li>
+                <li><a href="{{ url_for('main.movie_list', list_type='top_rated') }}">Top rated</a></li>
             </ul>
         </div>
 
